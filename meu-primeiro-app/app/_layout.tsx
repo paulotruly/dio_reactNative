@@ -1,16 +1,14 @@
-// NÃO SEI QUAL É A DIFERENÇA DESSAS IMPORTAÇÕES PRO COLOR SCHEME, TALVEZ
 // O COLOR SCHEME SÓ MUDA A ESTILIZAÇÃO ENQUANTO AQUI DE FATO APLICA, ENTÃO
-// ACREDITO QUE OS DOIS SE ATRELA
+// ACREDITO QUE OS DOIS SE ATRELA, LOGO, O DARK E DEFAULTTHEME FAZ FUNCIONAR,
+// MAS NO COLORSCHEME EU POSSO MUDAR A PALETA DE CORES DO DARK/LIGHT DEPENDENDO
+// DA ESTILIZAÇÃO DO MEU PROJETO
 
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-
-// STACK É AONDE A GENTE CRIA AS ROTAS
-// STATUSBAR NÃO SEI
 
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 
-// TALVEZ SEJA PADRÃO DE ANIMAÇÃO DO ROTEAMENTO
+// PADRÃO DE ANIMAÇÃO DO ROTEAMENTO
 
 import 'react-native-reanimated';
 
@@ -49,6 +47,9 @@ export default function RootLayout() {
         <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
       </Stack>
 
+      {/* STATUSBAR CONTROLE A APARÊNCIA DA BARRA SUPERIOR DO CELULAR,
+      TIPO AONDE APARECE A HORA, BATERIA E WIFI E O AUTO É A MELHOR PRÁTICA
+      PRA SE ADEQUAR AO MODO ESCURO E MODO CLARO  */}
       <StatusBar style="auto" />
 
     </ThemeProvider>
